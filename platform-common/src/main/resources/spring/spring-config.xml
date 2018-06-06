@@ -7,9 +7,18 @@
 		http://www.springframework.org/schema/context
 		http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <!--载入参数-->
-    <context:property-placeholder location="classpath:jdbc.properties" ignore-unresolvable="true"/>
-    <context:property-placeholder location="classpath:system.properties" ignore-unresolvable="true"/>
-
+    <!-- 载入参数：方式一 -->
     <!--<import resource="classpath:spring/spring-redis.xml"/>-->
+
+    <!-- 载入参数：方式二 -->
+    <bean id="prop" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+        <property name="locations">
+            <array>
+                <value>classpath:jdbc.properties</value>
+                <value>classpath:system.properties</value>
+            </array>
+        </property>
+    </bean>
+    <context:property-placeholder properties-ref="prop" ignore-unresolvable="true"/>
+
 </beans>
