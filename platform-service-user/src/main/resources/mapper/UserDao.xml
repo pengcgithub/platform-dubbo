@@ -4,20 +4,25 @@
 
 	<select id="queryByPhone" resultType="com.tracy.api.user.entity.UserBean">
 		SELECT *
-		FROM _user
+		FROM t_user
 		WHERE 
 		user_phone= #{userPhone} limit 1
 	</select>
 	
 	<select id="queryAll" resultType="com.tracy.api.user.entity.UserBean">
-		SELECT user_id AS userId,
+		SELECT id AS id,
 		user_name AS userName,
 		user_phone AS userPhone,
 		create_time AS createTime,
+		modify_time AS modifyTime,
 		score
-		FROM _user
+		FROM t_user
 		ORDER BY create_time DESC
-		limit #{offset},#{limit}
 	</select>
+
+	<insert id="insertUser" parameterType="com.tracy.api.user.entity.UserBean">
+		INSERT INTO t_user (id, user_name, user_phone, create_time, modify_time, score)
+		VALUES (#{id}, #{userName}, #{userPhone}, #{createTime}, #{modifyTime}, #{score})
+	</insert>
 
 </mapper>
