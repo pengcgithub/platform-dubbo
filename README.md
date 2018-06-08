@@ -30,6 +30,7 @@ platform-dubbo以学习dubbo分布式框架为基础搭建的项目，接下来�
 - logback
 - dubbo 2.8.4
 - zookeeper 3.4.6
+- pageHelper
 
 - 计划引入的技术
     - redis
@@ -37,7 +38,6 @@ platform-dubbo以学习dubbo分布式框架为基础搭建的项目，接下来�
     - 接口验证
     - swagger
     - mapper通用接口
-    - pageHelper
     
 ## 联系方式
 
