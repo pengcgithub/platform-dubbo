@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.List;
 
@@ -23,12 +24,12 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = "/list", method = RequestMethod.GET, produces = { "application/json;charset=UTF-8" })
+    @RequestMapping(value = "/queryUserByPage", method = RequestMethod.GET, produces = { "application/json;charset=UTF-8" })
     @ResponseBody
-    public List<UserBean> list(Integer offset, Integer limit) {
-        offset = offset == null ? 0 : offset;
-        limit = limit == null ? 50 : limit;
-        List<UserBean> userList = userService.queryUserList(offset, limit);
+    public List<UserBean> queryUserByPage(
+            @RequestParam(required = false, defaultValue = "1") int page,
+            @RequestParam(required = false, defaultValue = "10") int rows) {
+        List<UserBean> userList = userService.queryUserList(page, rows);
         return userList;
     }
 

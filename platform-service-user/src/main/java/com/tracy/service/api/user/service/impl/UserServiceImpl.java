@@ -1,5 +1,6 @@
 package com.tracy.service.api.user.service.impl;
 
+import com.github.pagehelper.PageHelper;
 import com.tracy.service.core.user.dao.UserDao;
 import com.tracy.api.user.entity.UserBean;
 import com.tracy.api.user.service.UserService;
@@ -20,7 +21,8 @@ public class UserServiceImpl implements UserService {
     private UserDao userDao;
 
     public List<UserBean> queryUserList(int offset, int limit) {
-        List<UserBean> userList = userDao.queryAll(offset, limit);
+        PageHelper.startPage(offset, limit); //分页查询
+        List<UserBean> userList = userDao.queryAll();
         return userList;
     }
 

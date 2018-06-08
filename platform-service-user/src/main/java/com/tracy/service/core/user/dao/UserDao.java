@@ -15,6 +15,8 @@ public interface UserDao {
 
     UserBean queryByPhone(long userPhone);
 
-    List<UserBean> queryAll(@Param("offset") int offset, @Param("limit") int limit);
+    List<UserBean> queryAll();
+
+    int insertUser(UserBean userBean);
 
 }
