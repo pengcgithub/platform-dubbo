@@ -30,7 +30,7 @@ public class SwaggerConfig {
     }
 
     private ApiInfo apiInfo() {
-        return new ApiInfoBuilder().title("restful api").description("").termsOfServiceUrl("http://localhost:8080").version("1.0").build();
+        return new ApiInfoBuilder().title("platform-dubbo restful api").description("platform-dubbo接口文档说明").termsOfServiceUrl("http://localhost:8080").version("1.0").build();
     }
 
 }
