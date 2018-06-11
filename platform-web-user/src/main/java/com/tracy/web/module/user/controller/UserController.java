@@ -1,7 +1,9 @@
-package com.tracy.web.user.controller;
+package com.tracy.web.module.user.controller;
 
 import com.tracy.api.user.entity.UserBean;
 import com.tracy.api.user.service.UserService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,9 +16,10 @@ import java.util.List;
  * <br/>
  *
  * @author pengc
- * @see com.tracy.web.user.controller
+ * @see com.tracy.web.module.user.controller
  * @since 2018/6/6
  */
+@Api(value="用户",description="用户相关操作")
 @Controller
 @RequestMapping("/user")
 public class UserController {
@@ -24,6 +27,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @ApiOperation(value="分页查询用户", notes="分页查询用户信息", response = UserBean.class)
     @RequestMapping(value = "/queryUserByPage", method = RequestMethod.GET, produces = { "application/json;charset=UTF-8" })
     @ResponseBody
     public List<UserBean> queryUserByPage(
