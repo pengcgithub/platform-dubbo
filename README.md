@@ -31,12 +31,12 @@ platform-dubbo以学习dubbo分布式框架为基础搭建的项目，接下来�
 - dubbo 2.8.4
 - zookeeper 3.4.6
 - pageHelper
+- swagger 2.4.0
 
 - 计划引入的技术
     - redis
     - fastDFS
     - 接口验证
-    - swagger
     - mapper通用接口
     - sharding-jdbc
     - 统一异常处理
