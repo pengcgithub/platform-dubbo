@@ -5,8 +5,14 @@ import lombok.Data;
 import java.io.Serializable;
 import java.util.Date;
 
+/**
+ * <br>
+ * @author pengc
+ * @see com.tracy.api.user.entity
+ * @since 2018/6/11
+ */
 @Data
-public class UserBean implements Serializable{
+public class UserBean implements Serializable {
 	
 	private String id;
 	
