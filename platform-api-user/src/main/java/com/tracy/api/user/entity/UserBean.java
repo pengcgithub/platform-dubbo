@@ -1,7 +1,6 @@
 package com.tracy.api.user.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import lombok.Data;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -11,7 +10,6 @@ import java.util.Date;
  * @see com.tracy.api.user.entity
  * @since 2018/6/11
  */
-@Data
 public class UserBean implements Serializable {
 	
 	private String id;
@@ -29,4 +27,51 @@ public class UserBean implements Serializable {
 	
 	private int score;
 
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public long getUserPhone() {
+		return userPhone;
+	}
+
+	public void setUserPhone(long userPhone) {
+		this.userPhone = userPhone;
+	}
+
+	public Date getCreateTime() {
+		return createTime;
+	}
+
+	public void setCreateTime(Date createTime) {
+		this.createTime = createTime;
+	}
+
+	public Date getModifyTime() {
+		return modifyTime;
+	}
+
+	public void setModifyTime(Date modifyTime) {
+		this.modifyTime = modifyTime;
+	}
+
+	public int getScore() {
+		return score;
+	}
+
+	public void setScore(int score) {
+		this.score = score;
+	}
 }
