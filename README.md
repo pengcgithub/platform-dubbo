@@ -42,6 +42,14 @@ platform-dubbo以学习dubbo分布式框架为基础搭建的项目，接下来�
     - 统一异常处理
     - Docker
     
+## 本地运行
+
+- 克隆项目到本地： `https://github.com/pengcgithub/platform-dubbo.git`
+- 启动服务提供者： platform-service-user下的`Provide.java`文件
+- 启动服务消费者： `platform-web-user`
+- 启动成功，访问swagger地址： `http://localhost:8888/user/swagger-ui.html`
+
+    
 ## 联系方式
 
 - 邮件：pengcheng3211@163.com
