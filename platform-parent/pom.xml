@@ -192,7 +192,7 @@
             <version>1.0.8</version>
         </dependency>
         <!--mybatis 数据访问层 end -->
-        <!--active mq start-->
+        <!--active listener start-->
         <dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>activemq-core</artifactId>
@@ -203,7 +203,7 @@
             <artifactId>activemq-pool</artifactId>
             <version>5.13.3</version>
         </dependency>
-        <!--active mq end-->
+        <!--active listener end-->
     </dependencies>
 
 </project>
