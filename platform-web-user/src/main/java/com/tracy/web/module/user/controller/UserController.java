@@ -37,4 +37,10 @@ public class UserController {
         return userList;
     }
 
+    @ApiOperation(value="队列中发送消息", notes="队列中发送消息", response = String.class)
+    @RequestMapping(value = "/sendMessage", method = RequestMethod.GET, produces = { "application/json;charset=UTF-8" })
+    public void sendMessage(@RequestParam String message) {
+        userService.sendMessage(message);
+    }
+
 }
