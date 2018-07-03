@@ -16,4 +16,6 @@ public interface UserService {
 
     UserBean queryByPhone(long userPhone);
 
+    void sendMessage(final String msg);
+
 }
