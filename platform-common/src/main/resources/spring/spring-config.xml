@@ -16,6 +16,7 @@
             <array>
                 <value>classpath:jdbc.properties</value>
                 <value>classpath:system.properties</value>
+                <value>classpath:mq.properties</value>
             </array>
         </property>
     </bean>

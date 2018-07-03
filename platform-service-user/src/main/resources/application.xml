@@ -8,6 +8,7 @@
     <import resource="classpath:spring/spring-config.xml"/>
     <import resource="classpath:spring/spring-dao.xml"/>
     <import resource="classpath:spring/spring-service.xml"/>
+    <import resource="classpath:spring/spring-mq.xml"/>
     <import resource="classpath:dubbo/dubbo-*.xml"/>
 
 </beans>
