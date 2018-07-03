@@ -19,23 +19,38 @@
 >
 	<context:component-scan base-package="com.tracy.service" />
 
-	<amq:connectionFactory id="amqConnectionFactory"
-						   brokerURL="${mq.brokerURL}"
-						   userName="${mq.userName}"
-						   password="${mq.password}" />
-
+    <!-- 第一种实现方式 -->
+	<!--<amq:connectionFactory id="amqConnectionFactory"-->
+						   <!--brokerURL="${mq.brokerURL}"-->
+						   <!--userName="${mq.userName}"-->
+						   <!--password="${mq.password}" />-->
 	<!-- 配置JMS连接工长 -->
-	<bean id="connectionFactory"
-		  class="org.springframework.jms.connection.CachingConnectionFactory">
-		<constructor-arg ref="amqConnectionFactory" />
-		<property name="sessionCacheSize" value="100" />
-	</bean>
+	<!--<bean id="connectionFactory"-->
+		  <!--class="org.springframework.jms.connection.CachingConnectionFactory">-->
+		<!--<constructor-arg ref="amqConnectionFactory" />-->
+		<!--<property name="sessionCacheSize" value="100" />-->
+	<!--</bean>-->
+
+    <!-- 第二种实现方式 -->
+    <!-- 真正可以产生Connection的ConnectionFactory，由对应的 JMS服务厂商提供 -->
+    <bean id="targetConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+        <property name="brokerURL" value="${mq.brokerURL}" />
+        <property name="userName" value="${mq.userName}" />
+        <property name="password" value="${mq.password}" />
+    </bean>
+
+    <!-- Spring用于管理真正的ConnectionFactory的ConnectionFactory -->
+    <bean id="connectionFactory"
+          class="org.springframework.jms.connection.SingleConnectionFactory">
+        <!-- 目标ConnectionFactory对应真实的可以产生JMS Connection的ConnectionFactory -->
+        <property name="targetConnectionFactory" ref="targetConnectionFactory" />
+    </bean>
 
 	<!-- 定义消息队列（Queue） -->
 	<bean id="demoQueueDestination" class="org.apache.activemq.command.ActiveMQQueue">
 		<!-- 设置消息队列的名字 -->
 		<constructor-arg>
-			<value>Jaycekon</value>
+			<value>spring-queue</value>
 		</constructor-arg>
 	</bean>
 
@@ -47,7 +62,6 @@
 		<!-- true是topic，false是queue，默认是false，此处显示写出false -->
 		<property name="pubSubDomain" value="false" />
 	</bean>
-
 
 	<!-- 配置消息队列监听者（Queue） -->
 	<bean id="queueMessageListener" class="com.tracy.service.listener.QueueMessageListener" />
