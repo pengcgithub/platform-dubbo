@@ -1,4 +1,4 @@
-CREATE DATABASE beauty_ssm;
+CREATE DATABASE platform_dubbo;
 
 CREATE TABLE `t_user` (
 `id`  varchar(32) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL ,
