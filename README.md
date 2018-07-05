@@ -23,15 +23,16 @@ platform-dubbo以学习dubbo分布式框架为基础搭建的项目，接下来�
 
 ## 技术说明
 
-- spring 4.2.0.RELEASE
-- mybatis 3.4.0
-- druid 1.0.20
-- lombok 1.18.0
-- logback
-- dubbo 2.8.4
-- zookeeper 3.4.6
-- pageHelper
-- swagger 2.4.0
+- 已引入的技术
+    - spring 4.2.0.RELEASE
+    - mybatis 3.4.0
+    - druid 1.0.20
+    - lombok 1.18.0
+    - logback
+    - dubbo 2.8.4
+    - zookeeper 3.4.6
+    - pageHelper
+    - swagger 2.4.0
 
 - 计划引入的技术
     - redis
@@ -45,9 +46,15 @@ platform-dubbo以学习dubbo分布式框架为基础搭建的项目，接下来�
 ## 本地运行
 
 - 克隆项目到本地： `https://github.com/pengcgithub/platform-dubbo.git`
+- 执行数据库脚本文件： `sql/database.sql`
+- 准备基础环境以及配置参数：
+    - [dubbo环境搭建](https://github.com/pengcgithub/java-development-environment/blob/master/dubbo.md)
+    - [zookeeper环境搭建](https://github.com/pengcgithub/java-development-environment/blob/master/zookeeper.md)
+    - [mysql环境搭建](https://github.com/pengcgithub/java-development-environment/blob/master/mysql/mysql%E5%AE%89%E8%A3%85.md)
+    - 修改配置文件： `jdbc.properties`、`mq.properties`、`system.properties`
 - 启动服务提供者： platform-service-user下的`Provide.java`文件
 - 启动服务消费者： `platform-web-user`
-- 启动成功，访问swagger地址： `http://localhost:8888/user/swagger-ui.html`
+- 启动成功，访问swagger地址： `http://localhost:端口/user/swagger-ui.html`
 
     
 ## 联系方式
