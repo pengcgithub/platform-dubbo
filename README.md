@@ -52,7 +52,7 @@ platform-dubbo以学习dubbo分布式框架为基础搭建的项目，接下来�
     - [zookeeper环境搭建](https://github.com/pengcgithub/java-development-environment/blob/master/zookeeper.md)
     - [mysql环境搭建](https://github.com/pengcgithub/java-development-environment/blob/master/mysql/mysql%E5%AE%89%E8%A3%85.md)
     - 修改配置文件： `jdbc.properties`、`mq.properties`、`system.properties`
-- 启动服务提供者： platform-service-user下的`Provide.java`文件
+- 启动服务提供者： `platform-service-user/Provide.java`文件
 - 启动服务消费者： `platform-web-user`
 - 启动成功，访问swagger地址： `http://localhost:端口/user/swagger-ui.html`
 
