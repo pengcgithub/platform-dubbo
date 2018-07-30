@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="httpSolrClient" class="org.apache.solr.client.solrj.impl.HttpSolrClient">
+        <constructor-arg name="builder" value="http://47.98.188.53:3501/solr/solr_core"/>
+    </bean>
+
+    <!--<bean id="httpSolrServer" class="org.apache.solr.client.solrj.impl.HttpSolrServer">-->
+        <!--<constructor-arg index="0" value="${solr.url}"/>-->
+        <!--&lt;!&ndash; 设置响应解析器 &ndash;&gt;-->
+        <!--<property name="parser">-->
+            <!--<bean class="org.apache.solr.client.solrj.impl.XMLResponseParser"/>-->
+        <!--</property>-->
+        <!--&lt;!&ndash; 设置重试次数&ndash;&gt;-->
+        <!--<property name="maxRetries" value="${solr.maxRetries}"/>-->
+        <!--&lt;!&ndash; 建立连接的最长时间 &ndash;&gt;-->
+        <!--<property name="connectionTimeout" value="${solr.connectionTimeout}"/>-->
+    <!--</bean>-->
+
+</beans>
