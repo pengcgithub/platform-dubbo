@@ -1,5 +1,6 @@
 package com.tracy.web.module.user.controller;
 
+import com.tracy.api.search.service.userSearch.UserSearchService;
 import com.tracy.api.user.entity.UserBean;
 import com.tracy.api.user.service.UserService;
 import io.swagger.annotations.Api;
@@ -27,6 +28,9 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private UserSearchService userSearchService;
+
     @ApiOperation(value="分页查询用户", notes="分页查询用户信息", response = UserBean.class)
     @RequestMapping(value = "/queryUserByPage", method = RequestMethod.GET, produces = { "application/json;charset=UTF-8" })
     @ResponseBody
@@ -41,6 +45,18 @@ public class UserController {
     @RequestMapping(value = "/sendMessage", method = RequestMethod.GET, produces = { "application/json;charset=UTF-8" })
     public void sendMessage(@RequestParam String message) {
         userService.sendMessage(message);
+    }
+
+    @ApiOperation(value="测试solr服务", notes="测试solr服务", response = String.class)
+    @RequestMapping(value = "/testSolrService", method = RequestMethod.GET, produces = { "application/json;charset=UTF-8" })
+    @ResponseBody
+    public Boolean testSolrService(@RequestParam String queryParam) {
+        try {
+            userSearchService.searchItems(queryParam, 0, 10);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return Boolean.TRUE;
     }
 
 }

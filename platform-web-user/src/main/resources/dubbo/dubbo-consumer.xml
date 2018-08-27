@@ -17,6 +17,8 @@
 
 	<!-- 用户服务接口 -->
 	<dubbo:reference interface="com.tracy.api.user.service.UserService" id="userService" />
+	<!-- solr接口 -->
+	<dubbo:reference interface="com.tracy.api.search.service.userSearch.UserSearchService" id="userSearchService" />
 
 
 </beans>  
