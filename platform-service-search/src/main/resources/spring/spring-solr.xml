@@ -2,25 +2,25 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:solr="http://www.springframework.org/schema/data/solr"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context.xsd">
+        http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/data/solr http://www.springframework.org/schema/data/solr/spring-solr.xsd">
 
+    <solr:repositories base-package="com.tracy.service"/>
+
+    <!-- 1、 apache solr 集成 spring -->
     <bean id="httpSolrClient" class="org.apache.solr.client.solrj.impl.HttpSolrClient">
-        <constructor-arg name="builder" value="http://47.98.188.53:3501/solr/solr_core"/>
+        <constructor-arg name="baseURL" value="${solr.baseUrl}"/>
+        <property name="connectionTimeout" value="${solr.connectionTimeout}"/>
+    </bean>
+    <!-- solr模板，使用solr模板可对索引库进行CRUD的操作 -->
+    <bean id="solrTemplate" class="org.springframework.data.solr.core.SolrTemplate">
+        <constructor-arg ref="httpSolrClient"/>
     </bean>
 
-    <!--<bean id="httpSolrServer" class="org.apache.solr.client.solrj.impl.HttpSolrServer">-->
-        <!--<constructor-arg index="0" value="${solr.url}"/>-->
-        <!--&lt;!&ndash; 设置响应解析器 &ndash;&gt;-->
-        <!--<property name="parser">-->
-            <!--<bean class="org.apache.solr.client.solrj.impl.XMLResponseParser"/>-->
-        <!--</property>-->
-        <!--&lt;!&ndash; 设置重试次数&ndash;&gt;-->
-        <!--<property name="maxRetries" value="${solr.maxRetries}"/>-->
-        <!--&lt;!&ndash; 建立连接的最长时间 &ndash;&gt;-->
-        <!--<property name="connectionTimeout" value="${solr.connectionTimeout}"/>-->
-    <!--</bean>-->
+    <!--2、 spring data solr 集成 spring -->
+
 
 </beans>

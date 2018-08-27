@@ -14,7 +14,7 @@
 	<!--<dubbo:registry protocol="zookeeper" address="zookeeper://106.15.183.40:3210" />-->
 
 	<!-- 用dubbo协议在20880端口暴露服务 -->
-	<dubbo:protocol name="dubbo" port="${dubbo.provider.user.protocol.port}" />
+	<dubbo:protocol name="dubbo" port="${dubbo.provider.search.protocol.port}" />
 	<!--<dubbo:protocol name="dubbo" port="8080" />-->
 
 	<!-- 当ProtocolConfig和ServiceConfig某属性没有配置时,采用此缺省值 -->
