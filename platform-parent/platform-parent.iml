@@ -53,6 +53,24 @@
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.7.4" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: mysql:mysql-connector-java:5.1.38" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba:druid:1.0.20" level="project" />
+    <orderEntry type="module-library">
+      <library name="Maven: com.alibaba:jconsole:1.8.0">
+        <CLASSES>
+          <root url="jar://E:/developmentDirectory/jdk1.8.0_20/lib/jconsole.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Maven: com.alibaba:tools:1.8.0">
+        <CLASSES>
+          <root url="jar://E:/developmentDirectory/jdk1.8.0_20/lib/tools.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
     <orderEntry type="library" name="Maven: org.springframework:spring-jdbc:4.2.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.mybatis:mybatis:3.4.0" level="project" />
     <orderEntry type="library" name="Maven: org.mybatis:mybatis-spring:1.3.0" level="project" />
