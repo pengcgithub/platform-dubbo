@@ -33,6 +33,7 @@ platform-dubbo以学习dubbo分布式框架为基础搭建的项目，接下来�
     - zookeeper 3.4.6
     - pageHelper
     - swagger 2.4.0
+    - solr
 
 - 计划引入的技术
     - redis
