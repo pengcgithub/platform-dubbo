@@ -11,11 +11,12 @@
 
     <modules>
         <module>../platform-common</module>
-        <module>../platform-api-user</module>
-        <module>../platform-service-user</module>
         <module>../platform-web-user</module>
         <module>../platform-api-search</module>
         <module>../platform-service-search</module>
+        <module>../platform-order</module>
+        <module>../platform-user</module>
+        <module>../platform-search</module>
     </modules>
 
     <properties>
@@ -207,6 +208,17 @@
             <version>5.13.3</version>
         </dependency>
         <!--active listener end-->
+        <dependency>
+            <groupId>org.mengyun</groupId>
+            <artifactId>tcc-transaction-dubbo</artifactId>
+            <version>1.2.4.22</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mengyun</groupId>
+            <artifactId>tcc-transaction-spring</artifactId>
+            <version>1.2.4.22</version>
+        </dependency>
     </dependencies>
 
 </project>

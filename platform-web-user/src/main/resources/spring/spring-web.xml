@@ -15,6 +15,10 @@
     <import resource="classpath:spring/spring-config.xml"/>
     <!--作为消费者导入远程接口-->
     <import resource="classpath:dubbo/dubbo-consumer.xml"/>
+    <!-- tcc -->
+    <import resource="classpath:tcc-transaction-dubbo.xml" />
+    <import resource="classpath:tcc-transaction.xml" />
+    <import resource="classpath:spring/spring-tcc.xml" />
 
     <!--配置springMVC-->
 
