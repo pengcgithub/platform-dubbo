@@ -12,8 +12,6 @@
     <modules>
         <module>../platform-common</module>
         <module>../platform-web-user</module>
-        <module>../platform-api-search</module>
-        <module>../platform-service-search</module>
         <module>../platform-order</module>
         <module>../platform-user</module>
         <module>../platform-search</module>
