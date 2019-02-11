@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean class="org.mengyun.tcctransaction.spring.recover.DefaultRecoverConfig">
+        <property name="maxRetryCount" value="30"/>
+        <property name="recoverDuration" value="60"/>
+        <property name="cronExpression" value="0/30 * * * * ?"/>
+        <property name="delayCancelExceptions">
+            <util:set>
+                <value>com.alibaba.dubbo.remoting.TimeoutException</value>
+            </util:set>
+        </property>
+    </bean>
+
+    <bean id="transactionRepository"
+          class="org.mengyun.tcctransaction.spring.repository.SpringJdbcTransactionRepository">
+        <property name="dataSource" ref="tccDataSource"/>
+        <property name="domain" value="ORDER"/>
+        <property name="tbSuffix" value="_RED"/>
+    </bean>
+
+    <util:properties id="tccjdbc" location="classpath:tccjdbc.properties"/>
+
+    <bean id="tccDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+          destroy-method="close" lazy-init="false">
+        <property name="driverClass" value="#{tccjdbc['jdbc.driverClassName']}"/>
+        <property name="jdbcUrl" value="#{tccjdbc['tcc.jdbc.url']}"/>
+        <property name="user" value="#{tccjdbc['jdbc.username']}"/>
+        <property name="password" value="#{tccjdbc['jdbc.password']}"/>
+        <property name="initialPoolSize" value="#{tccjdbc['c3p0.initialPoolSize']}"/>
+        <property name="minPoolSize" value="#{tccjdbc['c3p0.minPoolSize']}"/>
+        <property name="maxPoolSize" value="#{tccjdbc['c3p0.maxPoolSize']}"/>
+        <property name="acquireIncrement" value="#{tccjdbc['c3p0.acquireIncrement']}"/>
+        <property name="maxIdleTime" value="#{tccjdbc['c3p0.maxIdleTime']}"/>
+        <property name="checkoutTimeout" value="#{tccjdbc['c3p0.checkoutTimeout']}"/>
+    </bean>
+
+</beans>
