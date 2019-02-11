@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:solr="http://www.springframework.org/schema/data/solr"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/data/solr http://www.springframework.org/schema/data/solr/spring-solr.xsd">
+
+    <solr:repositories base-package="com.tracy.service"/>
+
+    <!-- 1、 apache solr 集成 spring -->
+    <bean id="httpSolrClient" class="org.apache.solr.client.solrj.impl.HttpSolrClient">
+        <constructor-arg name="baseURL" value="${solr.baseUrl}"/>
+        <property name="connectionTimeout" value="${solr.connectionTimeout}"/>
+    </bean>
+    <!-- solr模板，使用solr模板可对索引库进行CRUD的操作 -->
+    <bean id="solrTemplate" class="org.springframework.data.solr.core.SolrTemplate">
+        <constructor-arg ref="httpSolrClient"/>
+    </bean>
+
+    <!--2、 spring data solr 集成 spring -->
+
+
+</beans>
