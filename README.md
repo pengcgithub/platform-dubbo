@@ -2,7 +2,7 @@
 
 ## 简介
 
-platform-dubbo以学习dubbo分布式框架为基础搭建的项目，接下来会根据实际项目的需求叠加技术点。
+platform-dubbo以学习dubbo分布式框架为基础搭建的项目，根据实际项目的需求叠加技术点。
 
 
 ## 目录结构 
@@ -10,6 +10,14 @@ platform-dubbo以学习dubbo分布式框架为基础搭建的项目，接下来�
 ##### platform-parent |   父类依赖包，版本控制
 
 ##### platform-common  |   工具类
+
+##### platform-search  | 搜索服务
+* platform-api-search      |  搜索服务接口
+* platform-server-search   |  搜索服务提供者
+
+##### platform-order  | 订单服务
+* platform-api-order      |  订单服务接口
+* platform-server-order   |  订单服务提供者
 
 ##### platform-user  |  用户服务
 * platform-api-user      |  用户服务接口
@@ -29,11 +37,12 @@ platform-dubbo以学习dubbo分布式框架为基础搭建的项目，接下来�
     - druid 1.0.20
     - lombok 1.18.0
     - logback
-    - dubbo 2.8.4
+    - dubbo
     - zookeeper 3.4.6
     - pageHelper
     - swagger 2.4.0
     - solr
+    - [tcc-transaction](https://github.com/changmingxie/tcc-transaction)
 
 - 计划引入的技术
     - redis
