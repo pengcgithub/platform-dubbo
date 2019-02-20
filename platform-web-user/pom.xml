@@ -50,22 +50,22 @@
         <dependency>
             <groupId>org.mengyun</groupId>
             <artifactId>tcc-transaction-dubbo</artifactId>
-            <version>1.2.4.22</version>
+            <version>${tcc-transaction.version}</version>
         </dependency>
         <dependency>
             <groupId>org.mengyun</groupId>
             <artifactId>tcc-transaction-spring</artifactId>
-            <version>1.2.4.22</version>
+            <version>${tcc-transaction.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mengyun</groupId>
+            <artifactId>tcc-transaction-core</artifactId>
+            <version>${tcc-transaction.version}</version>
         </dependency>
         <dependency>
             <groupId>com.mchange</groupId>
             <artifactId>c3p0</artifactId>
             <version>0.9.5-pre10</version>
-        </dependency>
-        <dependency>
-            <groupId>org.mengyun</groupId>
-            <artifactId>tcc-transaction-core</artifactId>
-            <version>1.2.4.22</version>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
