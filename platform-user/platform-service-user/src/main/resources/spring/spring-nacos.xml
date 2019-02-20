@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xmlns:nacos="http://nacos.io/schema/nacos"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://nacos.io/schema/nacos
+       http://nacos.io/schema/nacos.xsd">
+
+    <nacos:annotation-driven/>
+
+    <!--
+        server-addr：数据库地址
+        namespace：配置的命名空间，例如namespace="14b6950a-0677-4558-ad97-cba62c0f7f35"
+        -->
+    <nacos:global-properties server-addr="127.0.0.1:8848" />
+
+    <!--
+        Nacos 控制台添加配置：
+        Data ID：
+            datasource.properties
+        Group：
+            DEFAULT_GROUP
+        配置内容示例：
+            datasource.url=jdbc:mysql://localhost:3306/test?useSSL=false
+            datasource.username=root
+            datasource.password=root
+            datasource.initial-size=10
+            datasource.max-active=20
+    -->
+    <nacos:property-source data-id="config.properties"/>
+</beans>

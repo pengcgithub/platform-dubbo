@@ -4,13 +4,14 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
 		http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <import resource="classpath:spring/spring-tcc.xml"/>
+    <import resource="classpath:spring/spring-nacos.xml" />
     <import resource="classpath:spring/spring-config.xml"/>
     <import resource="classpath:spring/spring-dao.xml"/>
     <import resource="classpath:spring/spring-service.xml"/>
     <!--<import resource="classpath:spring/spring-mq.xml"/>-->
     <import resource="classpath:dubbo/dubbo-*.xml"/>
     <!-- tcc -->
+    <import resource="classpath:spring/spring-tcc.xml"/>
     <import resource="classpath:tcc-transaction-dubbo.xml" />
     <import resource="classpath:tcc-transaction.xml" />
 
