@@ -20,6 +20,8 @@
     <properties>
         <!--<spring.version>4.3.8.RELEASE</spring.version>-->
         <spring.version>4.2.0.RELEASE</spring.version>
+        <tcc-transaction.version>1.2.4.24</tcc-transaction.version>
+        <aspectj.version>1.8.9</aspectj.version>
     </properties>
 
     <dependencies>
@@ -209,13 +211,35 @@
         <dependency>
             <groupId>org.mengyun</groupId>
             <artifactId>tcc-transaction-dubbo</artifactId>
-            <version>1.2.4.22</version>
+            <version>${tcc-transaction.version}</version>
         </dependency>
-
         <dependency>
             <groupId>org.mengyun</groupId>
             <artifactId>tcc-transaction-spring</artifactId>
-            <version>1.2.4.22</version>
+            <version>${tcc-transaction.version}</version>
+        </dependency>
+        <!--tcc-transaction-api-->
+        <dependency>
+            <groupId>org.mengyun</groupId>
+            <artifactId>tcc-transaction-api</artifactId>
+            <version>${tcc-transaction.version}</version>
+        </dependency>
+        <!--tcc-transaction-core-->
+        <dependency>
+            <groupId>org.mengyun</groupId>
+            <artifactId>tcc-transaction-core</artifactId>
+            <version>${tcc-transaction.version}</version>
+        </dependency>
+        <!-- aspectj -->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectj.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjrt</artifactId>
+            <version>${aspectj.version}</version>
         </dependency>
     </dependencies>
 
