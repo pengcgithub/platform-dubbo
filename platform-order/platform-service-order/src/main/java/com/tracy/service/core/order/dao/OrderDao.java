@@ -16,7 +16,7 @@ import java.util.List;
  */
 public interface OrderDao {
 
-    @Select("SELECT id, create_time AS createTime, number, `status`, product_id AS productId, total_amount AS totalAmount, count, user_id AS userId FROM `order`")
+    @Select("SELECT id, create_time AS createTime, number, `status`, product_id AS productId, total_amount AS totalAmount, count, user_id AS userId FROM `t_order`")
     List<OrderBean> queryAll();
 
     int insertOrder(OrderBean orderBean);
@@ -28,7 +28,7 @@ public interface OrderDao {
      */
     int updateOrderStatus(OrderBean orderBean);
 
-    @Update("UPDATE `order`  `status` = #{status} WHERE id = #{id}")
+    @Update("UPDATE `t_order`  `status` = #{status} WHERE id = #{id}")
     int confirmOrderStatus(OrderBean orderBean);
 
 }

@@ -3,12 +3,12 @@
 <mapper namespace="com.tracy.service.core.order.dao.OrderDao">
 
     <insert id="insertOrder" parameterType="com.tracy.api.order.entity.OrderBean">
-      INSERT INTO `order` (id, create_time, number, `status`, product_id, total_amount, count, user_id)
+      INSERT INTO `t_order` (id, create_time, number, `status`, product_id, total_amount, count, user_id)
       VALUES(#{id}, #{createTime}, #{number}, #{status}, #{productId}, #{totalAmount}, #{count}, #{userId})
     </insert>
 
     <update id="updateOrderStatus" parameterType="com.tracy.api.order.entity.OrderBean">
-      UPDATE `order` SET `status` = #{status} WHERE id = #{id}
+      UPDATE `t_order` SET `status` = #{status} WHERE id = #{id}
     </update>
 
 </mapper>
