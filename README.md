@@ -43,6 +43,8 @@ platform-dubbo以学习dubbo分布式框架为基础搭建的项目，根据实�
     - swagger 2.4.0
     - solr
     - [tcc-transaction](https://github.com/changmingxie/tcc-transaction)
+    - [nacos配置中心](https://github.com/alibaba/nacos)
+    - [xxl-job](https://github.com/xuxueli/xxl-job)
 
 - 计划引入的技术
     - redis
