@@ -18,6 +18,7 @@
                 <value>classpath:system.properties</value>
                 <value>classpath:mq.properties</value>
                 <value>classpath:solr.properties</value>
+                <value>classpath:xxl-job.properties</value>
             </array>
         </property>
     </bean>
